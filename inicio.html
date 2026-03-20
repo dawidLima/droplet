@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Droplet - Início</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="body-bg" onload="carregarInicio()">
+  <div class="app-container">
+    <header class="topbar fade-in-down">
+      <div class="logo">
+        <span class="logo-icon">💧</span>
+        <h1>Droplet</h1>
+      </div>
+
+      <div class="topbar-right">
+        <span class="welcome-user" id="nomeHeader">Olá, usuário</span>
+        <button class="icon-button">🔔</button>
+        <div class="avatar" id="avatarUsuario">U</div>
+        <button class="btn-outline" onclick="logout()">Sair</button>
+      </div>
+    </header>
+
+    <main class="home-grid">
+      <section class="left-column">
+        <div class="card info-card fade-in-up">
+          <div class="card-header-simple">
+            <h3>Perfil</h3>
+            <button class="btn-outline" onclick="abrirModalPerfil()">Editar</button>
+          </div>
+
+          <div class="info-mini-card">
+            <span class="mini-label">Nome</span>
+            <strong id="nomeUsuario">Usuário</strong>
+          </div>
+
+          <div class="info-mini-card">
+            <span class="mini-label">Peso</span>
+            <strong id="pesoUsuario">0 kg</strong>
+          </div>
+
+          <div class="info-mini-card">
+            <span class="mini-label">Altura</span>
+            <strong id="alturaUsuario">0.00 m</strong>
+          </div>
+
+          <div class="info-mini-card">
+            <span class="mini-label">Meta diária</span>
+            <strong id="metaDiariaTopo">0 ml</strong>
+          </div>
+
+          <p class="daily-goal-text">
+            A meta é calculada com base no peso. Você pode editar quando quiser.
+          </p>
+        </div>
+
+        <div class="card consumo-card fade-in-up delay-1">
+          <h2>Consumo de Hoje</h2>
+
+          <div class="consumo-main-line">
+            <span class="consumo-valor" id="consumoHojeTexto">0ml</span>
+            <span class="consumo-meta">de <strong id="metaHojeTexto">0ml</strong></span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill" id="barraProgresso"></div>
+          </div>
+
+          <p class="meta-ok">Meta diária: <span id="metaDiariaLabel">0ml</span></p>
+
+          <div class="actions-row">
+            <button class="btn-light" onclick="adicionarConsumo(100)">+100ml</button>
+            <button class="btn-light" onclick="adicionarConsumo(200)">+200ml</button>
+            <button class="btn-light danger-soft" onclick="removerConsumoRapido(100)">-100ml</button>
+            <button class="btn-primary" onclick="adicionarConsumoPersonalizado()">Anotar consumo</button>
+            <button class="btn-reset" onclick="resetarConsumoDia()">Resetar dia</button>
+          </div>
+        </div>
+
+        <div class="card historico-card fade-in-up delay-2">
+          <div class="card-header-row">
+            <h2>Histórico de Consumo</h2>
+            <a href="historico.html">Ver histórico</a>
+          </div>
+
+          <div id="listaHistoricoHoje" class="lista-historico"></div>
+        </div>
+      </section>
+
+      <section class="right-column">
+        <div class="card image-card fade-in-up delay-1">
+          <div class="scene-area">
+            <div class="drop drop-a"></div>
+            <div class="drop drop-b"></div>
+            <div class="drop drop-c"></div>
+
+            <div class="bottle bottle-home float-soft">
+              <div class="bottle-cap"></div>
+              <div class="bottle-water" id="aguaGarrafa"></div>
+            </div>
+
+            <div class="scale-marks">
+              <span id="mark1">2500ml</span>
+              <span id="mark2">2000ml</span>
+              <span id="mark3">1500ml</span>
+              <span id="mark4">1000ml</span>
+              <span id="mark5">500ml</span>
+              <span id="mark6">0ml</span>
+            </div>
+
+            <div class="person-home breathing"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalPerfil">
+    <div class="modal-card fade-in-up">
+      <div class="modal-header">
+        <h3>Editar perfil</h3>
+        <button class="icon-button" onclick="fecharModalPerfil()">✖</button>
+      </div>
+
+      <div class="modal-body">
+        <label for="inputNome">Nome</label>
+        <input type="text" id="inputNome" placeholder="Seu nome" />
+
+        <label for="inputPeso">Peso (kg)</label>
+        <input type="number" id="inputPeso" placeholder="Ex: 70" />
+
+        <label for="inputAltura">Altura (m)</label>
+        <input type="number" step="0.01" id="inputAltura" placeholder="Ex: 1.75" />
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-light" onclick="fecharModalPerfil()">Cancelar</button>
+        <button class="btn-primary" onclick="salvarPerfil()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
