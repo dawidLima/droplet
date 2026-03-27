@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Droplet - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="body-bg">
+  <main class="auth-page">
+    <section class="auth-card fade-in-up">
+      <div class="auth-left">
+        <div class="logo">
+          <span class="logo-icon">💧</span>
+          <h1>Droplet</h1>
+        </div>
+
+        <!-- REMOVIDO o float-soft daqui -->
+        <div class="auth-illustration">
+          <div class="drop drop-1"></div>
+          <div class="drop drop-2"></div>
+          <div class="drop drop-3"></div>
+
+          <div class="bottle bottle-login">
+            <div class="bottle-cap"></div>
+            <div class="bottle-water water-40"></div>
+          </div>
+
+          <div class="glass"></div>
+          <div class="person-shape"></div>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <div class="auth-switch">
+          <button class="auth-switch-btn active" id="btnMostrarLogin" type="button">Login</button>
+          <button class="auth-switch-btn" id="btnMostrarCadastro" type="button">Cadastrar</button>
+        </div>
+
+        <div id="authMensagem" class="auth-message hidden"></div>
+
+        <div id="blocoLogin">
+          <h2>Login</h2>
+
+          <form class="auth-form" id="loginForm">
+            <label for="emailLogin">E-mail</label>
+            <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required />
+
+            <label for="senhaLogin">Senha</label>
+            <input type="password" id="senhaLogin" placeholder="Digite sua senha" required />
+
+            <div class="auth-options">
+              <label class="remember-me">
+                <input type="checkbox" id="lembrarLogin" />
+                <span>Lembrar de mim</span>
+              </label>
+
+              <a href="#" id="btnEsqueciSenha">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">
+              Entrar
+            </button>
+          </form>
+        </div>
+
+        <div id="blocoCadastro" class="hidden">
+          <h2>Criar conta</h2>
+
+          <form class="auth-form" id="cadastroForm">
+            <label for="nomeCadastro">Nome</label>
+            <input type="text" id="nomeCadastro" placeholder="Digite seu nome" required />
+
+            <label for="emailCadastro">E-mail</label>
+            <input type="email" id="emailCadastro" placeholder="Digite seu e-mail" required />
+
+            <label for="senhaCadastro">Senha</label>
+            <input type="password" id="senhaCadastro" placeholder="Crie uma senha" required />
+
+            <label for="confirmarSenhaCadastro">Confirmar senha</label>
+            <input type="password" id="confirmarSenhaCadastro" placeholder="Repita a senha" required />
+
+            <button type="submit" class="btn-primary btn-full">
+              Cadastrar
+            </button>
+          </form>
+        </div>
+
+        <div class="social-login">
+          <button class="social-btn" type="button" aria-label="Entrar com Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+
+          <button class="social-btn" type="button" aria-label="Entrar com Google">
+            <i class="fab fa-google"></i>
+          </button>
+
+          <button class="social-btn" type="button" aria-label="Entrar com Apple">
+            <i class="fab fa-apple"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
