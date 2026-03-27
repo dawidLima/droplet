@@ -29,4 +29,4 @@ Em desenvolvimento 🚧
 
 ## 👨‍💻 Autor
 
-Alex Santos
+Alex Santos e Dawid Lima
