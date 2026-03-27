@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Droplet - Login</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="body-bg">
   <main class="auth-page">
@@ -15,7 +16,8 @@
           <h1>Droplet</h1>
         </div>
 
-        <div class="auth-illustration float-soft">
+        <!-- REMOVIDO o float-soft daqui -->
+        <div class="auth-illustration">
           <div class="drop drop-1"></div>
           <div class="drop drop-2"></div>
           <div class="drop drop-3"></div>
@@ -51,7 +53,7 @@
             <div class="auth-options">
               <label class="remember-me">
                 <input type="checkbox" id="lembrarLogin" />
-                Lembrar de mim
+                <span>Lembrar de mim</span>
               </label>
 
               <a href="#" id="btnEsqueciSenha">Esqueceu a senha?</a>
@@ -85,10 +87,18 @@
           </form>
         </div>
 
-        <div class="social-icons">
-          <span>f</span>
-          <span>G</span>
-          <span></span>
+        <div class="social-login">
+          <button class="social-btn" type="button" aria-label="Entrar com Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+
+          <button class="social-btn" type="button" aria-label="Entrar com Google">
+            <i class="fab fa-google"></i>
+          </button>
+
+          <button class="social-btn" type="button" aria-label="Entrar com Apple">
+            <i class="fab fa-apple"></i>
+          </button>
         </div>
       </div>
     </section>
